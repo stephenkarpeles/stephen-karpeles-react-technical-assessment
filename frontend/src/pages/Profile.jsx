@@ -1,7 +1,31 @@
+import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { orderAPI } from '../services/api';
 
 const Profile = () => {
   const { user } = useAuth();
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchOrders();
+  }, []);
+
+  const fetchOrders = async () => {
+    try {
+      const response = await orderAPI.getAll();
+      if (response.data.success) {
+        setOrders(response.data.data || []);
+      }
+    } catch (err) {
+      console.error('Error fetching orders:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const totalSpent = orders.reduce((sum, order) => sum + (order.total || 0), 0);
+  const totalOrders = orders.length;
 
   if (!user) {
     return null;
@@ -106,7 +130,7 @@ const Profile = () => {
             />
           </svg>
           <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
-            0
+            {loading ? '...' : totalOrders}
           </div>
           <div className="text-gray-600 dark:text-gray-400">
             Total Orders
@@ -128,7 +152,7 @@ const Profile = () => {
             />
           </svg>
           <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
-            $0.00
+            {loading ? '...' : `$${totalSpent.toFixed(2)}`}
           </div>
           <div className="text-gray-600 dark:text-gray-400">
             Total Spent
