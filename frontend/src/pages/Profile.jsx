@@ -18,11 +18,11 @@ const Profile = () => {
         <div className="card p-6 text-center">
           <div className="w-32 h-32 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-4xl font-bold text-primary-600 dark:text-primary-400">
-              {user.name?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}
+              {user.firstName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}
             </span>
           </div>
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-            {user.name}
+            {user.firstName} {user.lastName}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-sm">
             Member since {new Date(user.createdAt).toLocaleDateString()}
@@ -41,7 +41,7 @@ const Profile = () => {
                 Full Name
               </label>
               <div className="input-field bg-gray-50 dark:bg-gray-700">
-                {user.name}
+                {user.firstName} {user.lastName}
               </div>
             </div>
 
@@ -63,13 +63,13 @@ const Profile = () => {
               </div>
             </div>
 
-            {user.phoneNumber && (
+            {user.phone && (
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Phone Number
                 </label>
                 <div className="input-field bg-gray-50 dark:bg-gray-700">
-                  {user.phoneNumber}
+                  {user.phone}
                 </div>
               </div>
             )}
@@ -80,17 +80,12 @@ const Profile = () => {
                   Address
                 </label>
                 <div className="input-field bg-gray-50 dark:bg-gray-700">
-                  {user.address}
+                  {user.address.street}, {user.address.city}, {user.address.state} {user.address.zipCode}
                 </div>
               </div>
             )}
           </div>
 
-          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-            <button className="btn-primary">
-              Edit Profile
-            </button>
-          </div>
         </div>
       </div>
 

@@ -136,7 +136,7 @@ const Navbar = () => {
                 {/* User Menu */}
                 <div className="flex items-center space-x-3">
                   <span className="hidden md:block text-sm text-gray-700 dark:text-gray-300">
-                    {user?.name || user?.email}
+                    {user?.firstName ? `${user.firstName} ${user.lastName}` : user?.email}
                   </span>
                   <button
                     onClick={handleLogout}
