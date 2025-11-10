@@ -70,7 +70,7 @@ export const orderAPI = {
 
 // Review APIs
 export const reviewAPI = {
-  getByProduct: (productId) => api.get(`/products/${productId}/reviews`),
+  getByProduct: (productId) => api.get(`/reviews`, { params: { productId } }),
   create: (reviewData) => api.post('/reviews', reviewData),
 };
 

@@ -45,7 +45,7 @@ const ProductDetail = () => {
     try {
       const response = await reviewAPI.getByProduct(id);
       if (response.data.success) {
-        setReviews(response.data.data.reviews || []);
+        setReviews(response.data.data || []);
       }
     } catch (err) {
       console.error('Error fetching reviews:', err);
