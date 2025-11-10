@@ -180,7 +180,9 @@ const generateProducts = () => {
       compareAtPrice: 1099.99,
       categoryId: 'cat-6',
       sellerId: 'user-2',
-      images: [],
+      images: [
+        'https://placehold.co/800x600?text=iPhone+15+Pro'
+      ],
       stock: 50,
       sku: 'IPH15PRO-001',
       status: 'active',
@@ -206,7 +208,9 @@ const generateProducts = () => {
       compareAtPrice: 2799.99,
       categoryId: 'cat-7',
       sellerId: 'user-2',
-      images: [],
+      images: [
+        'https://placehold.co/800x600?text=MacBook+Pro+16'
+      ],
       stock: 25,
       sku: 'MBP16-001',
       status: 'active',
@@ -232,7 +236,9 @@ const generateProducts = () => {
       compareAtPrice: 129.99,
       categoryId: 'cat-2',
       sellerId: 'user-3',
-      images: [],
+      images: [
+        'https://placehold.co/800x600?text=Nike+Air+Max+90'
+      ],
       stock: 100,
       sku: 'NIKE-AM90-001',
       status: 'active',
@@ -257,7 +263,9 @@ const generateProducts = () => {
       compareAtPrice: 1299.99,
       categoryId: 'cat-6',
       sellerId: 'user-3',
-      images: [],
+      images: [
+        'https://placehold.co/800x600?text=Samsung+Galaxy+S24'
+      ],
       stock: 40,
       sku: 'SGS24U-001',
       status: 'active',
@@ -283,7 +291,9 @@ const generateProducts = () => {
       compareAtPrice: 15.99,
       categoryId: 'cat-4',
       sellerId: 'user-2',
-      images: [],
+      images: [
+        'https://placehold.co/800x600?text=The+Great+Gatsby'
+      ],
       stock: 200,
       sku: 'BOOK-GG-001',
       status: 'active',
@@ -309,7 +319,9 @@ const generateProducts = () => {
       compareAtPrice: 49.99,
       categoryId: 'cat-5',
       sellerId: 'user-3',
-      images: [],
+      images: [
+        'https://placehold.co/800x600?text=Yoga+Mat+Premium'
+      ],
       stock: 75,
       sku: 'YOGA-MAT-001',
       status: 'active',
@@ -335,7 +347,9 @@ const generateProducts = () => {
       compareAtPrice: 119.99,
       categoryId: 'cat-3',
       sellerId: 'user-2',
-      images: [],
+      images: [
+        'https://placehold.co/800x600?text=Coffee+Maker+Deluxe'
+      ],
       stock: 30,
       sku: 'COFFEE-001',
       status: 'active',
@@ -360,7 +374,9 @@ const generateProducts = () => {
       compareAtPrice: 249.99,
       categoryId: 'cat-1',
       sellerId: 'user-3',
-      images: [],
+      images: [
+        'https://placehold.co/800x600?text=Wireless+Headphones'
+      ],
       stock: 60,
       sku: 'HEADPHONES-001',
       status: 'active',
